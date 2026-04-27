@@ -203,6 +203,7 @@
       animation: fillBar 1.6s cubic-bezier(.4,0,.2,1) forwards;
     }
     @keyframes fillBar { to { transform: scaleX(1); } }
+    @keyframes spin { to { transform: rotate(360deg); } }
 
     .tech-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 1.8rem; }
     .tech-tag {
@@ -676,25 +677,66 @@
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
   /* ── CONTACT FORM ── */
-  const GOOGLE_FORM='https://docs.google.com/forms/d/e/1FAIpQLSem4QtJww5zOrgyMtBtMD5nHMFHsQl4C5VA7GohlueOO-B1ag/viewform?usp=publish-editor';
-  document.getElementById('submit-btn').addEventListener('click',()=>{
-    const name=document.getElementById('f-name').value.trim();
-    const city=document.getElementById('f-city').value.trim();
-    const mobile=document.getElementById('f-mobile').value.trim();
-    const desc=document.getElementById('f-desc').value.trim();
-    if(!name||!city||!mobile||!desc){
-      const btn=document.getElementById('submit-btn');
-      btn.style.transform='translateX(-5px)';
-      setTimeout(()=>{btn.style.transform='translateX(5px)';setTimeout(()=>{btn.style.transform='';},100);},100);
+  const GOOGLE_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSem4QtJww5zOrgyMtBtMD5nHMFHsQl4C5VA7GohlueOO-B1ag/viewform?usp=publish-editor';
+
+  document.getElementById('submit-btn').addEventListener('click', async () => {
+    const name     = document.getElementById('f-name').value.trim();
+    const city     = document.getElementById('f-city').value.trim();
+    const mobile   = document.getElementById('f-mobile').value.trim();
+    const whatsapp = document.getElementById('f-whatsapp').value.trim() || mobile;
+    const desc     = document.getElementById('f-desc').value.trim();
+
+    /* Validation */
+    if (!name || !city || !mobile || !desc) {
+      const btn = document.getElementById('submit-btn');
+      btn.style.transform = 'translateX(-5px)';
+      setTimeout(() => { btn.style.transform = 'translateX(5px)'; setTimeout(() => { btn.style.transform = ''; }, 100); }, 100);
       return;
     }
-    const whatsapp=document.getElementById('f-whatsapp').value.trim()||mobile;
-    const subject=encodeURIComponent('Portfolio Enquiry from '+name);
-    const body=encodeURIComponent('Name: '+name+'\nCity: '+city+'\nMobile: '+mobile+'\nWhatsApp: '+whatsapp+'\n\nProject:\n'+desc);
-    window.open('mailto:Chiragjainsinghai46@gmail.com?subject='+subject+'&body='+body);
-    window.open(GOOGLE_FORM,'_blank');
-    document.getElementById('form-body').style.display='none';
-    document.getElementById('form-success').style.display='block';
+
+    /* Loading state */
+    const btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…`;
+
+    /* Send via Formspree → delivers straight to Chiragjainsinghai46@gmail.com */
+    try {
+      const res = await fetch('https://formspree.io/f/xkgwdobn', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name,
+          city,
+          mobile,
+          whatsapp,
+          message: desc,
+          _subject: 'New Website Enquiry from ' + name,
+          _replyto: '',
+        })
+      });
+
+      if (res.ok) {
+        /* Success — show thank-you panel */
+        document.getElementById('form-body').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+        /* Also open Google Form so data lands there too */
+        window.open(GOOGLE_FORM, '_blank');
+      } else {
+        throw new Error('Server error');
+      }
+    } catch (err) {
+      /* Fallback: open mailto if Formspree fails */
+      const subject = encodeURIComponent('Portfolio Enquiry from ' + name);
+      const body    = encodeURIComponent(
+        'Name: ' + name + '\nCity: ' + city +
+        '\nMobile: ' + mobile + '\nWhatsApp: ' + whatsapp +
+        '\n\nProject:\n' + desc
+      );
+      window.location.href = 'mailto:Chiragjainsinghai46@gmail.com?subject=' + subject + '&body=' + body;
+
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
+    }
   });
 </script>
 </body>

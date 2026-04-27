@@ -625,20 +625,21 @@
               <textarea id="f-desc" placeholder="Tell me what kind of website you need, your goals, budget, timeline…" required></textarea>
             </div>
           </div>
-          <p class="form-note">
-            <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-            Responses saved to
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSem4QtJww5zOrgyMtBtMD5nHMFHsQl4C5VA7GohlueOO-B1ag/viewform?usp=publish-editor" target="_blank">Google Form ↗</a>
-          </p>
           <button class="btn-submit" id="submit-btn" type="button">
             <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
             Send Message
           </button>
         </div>
-        <div id="form-success">
-          <svg width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-          <h4>Message Sent!</h4>
-          <p>Thanks for reaching out. Chirag will reply within 24 hours.</p>
+        <div id="form-success" style="display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:3rem 1rem;gap:1rem;">
+          <div style="width:64px;height:64px;border-radius:50%;background:rgba(0,201,255,0.1);border:1.5px solid rgba(0,201,255,0.35);display:flex;align-items:center;justify-content:center;margin-bottom:0.5rem;">
+            <svg width="28" height="28" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          </div>
+          <h4 style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.04em;">Message Received!</h4>
+          <p style="color:var(--muted);font-size:0.85rem;max-width:260px;line-height:1.7;">Thanks for reaching out, <span id="success-name" style="color:var(--accent)"></span>. Chirag will get back to you within 24 hours.</p>
+          <div style="display:flex;align-items:center;gap:8px;margin-top:0.5rem;font-size:0.7rem;color:var(--muted);font-family:'JetBrains Mono',monospace;">
+            <svg width="12" height="12" fill="none" stroke="var(--accent)" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 8 10-8"/></svg>
+            Confirmation sent to your email
+          </div>
         </div>
       </div>
 
@@ -677,8 +678,6 @@
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 
   /* ── CONTACT FORM ── */
-  const GOOGLE_FORM = 'https://docs.google.com/forms/d/e/1FAIpQLSem4QtJww5zOrgyMtBtMD5nHMFHsQl4C5VA7GohlueOO-B1ag/viewform?usp=publish-editor';
-
   document.getElementById('submit-btn').addEventListener('click', async () => {
     const name     = document.getElementById('f-name').value.trim();
     const city     = document.getElementById('f-city').value.trim();
@@ -686,56 +685,59 @@
     const whatsapp = document.getElementById('f-whatsapp').value.trim() || mobile;
     const desc     = document.getElementById('f-desc').value.trim();
 
-    /* Validation */
-    if (!name || !city || !mobile || !desc) {
-      const btn = document.getElementById('submit-btn');
-      btn.style.transform = 'translateX(-5px)';
-      setTimeout(() => { btn.style.transform = 'translateX(5px)'; setTimeout(() => { btn.style.transform = ''; }, 100); }, 100);
-      return;
-    }
+    /* Highlight empty fields */
+    ['f-name','f-city','f-mobile','f-desc'].forEach(id => {
+      const el = document.getElementById(id);
+      el.style.borderColor = el.value.trim() ? '' : 'rgba(255,80,80,0.7)';
+    });
+    if (!name || !city || !mobile || !desc) return;
 
     /* Loading state */
     const btn = document.getElementById('submit-btn');
     btn.disabled = true;
-    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg> Sending…`;
+    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>&nbsp; Sending…`;
 
-    /* Send via Formspree → delivers straight to Chiragjainsinghai46@gmail.com */
     try {
+      /* POST to Formspree in background — user stays on page */
       const res = await fetch('https://formspree.io/f/mgorbdar', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          name,
-          city,
-          mobile,
-          whatsapp,
-          message: desc,
-          _subject: 'New Website Enquiry from ' + name,
-          _replyto: '',
+          Name: name, City: city, Mobile: mobile,
+          WhatsApp: whatsapp, 'Project Description': desc,
+          _subject: '📩 New Enquiry from ' + name,
         })
       });
 
-      if (res.ok) {
-        /* Success — show thank-you panel */
-        document.getElementById('form-body').style.display = 'none';
-        document.getElementById('form-success').style.display = 'block';
-        /* Also open Google Form so data lands there too */
-        window.open(GOOGLE_FORM, '_blank');
-      } else {
-        throw new Error('Server error');
-      }
-    } catch (err) {
-      /* Fallback: open mailto if Formspree fails */
-      const subject = encodeURIComponent('Portfolio Enquiry from ' + name);
-      const body    = encodeURIComponent(
-        'Name: ' + name + '\nCity: ' + city +
-        '\nMobile: ' + mobile + '\nWhatsApp: ' + whatsapp +
-        '\n\nProject:\n' + desc
-      );
-      window.location.href = 'mailto:Chiragjainsinghai46@gmail.com?subject=' + subject + '&body=' + body;
+      if (!res.ok) throw new Error();
 
+      /* Smooth crossfade to success */
+      const formBody = document.getElementById('form-body');
+      const success  = document.getElementById('form-success');
+      formBody.style.transition = 'opacity 0.4s ease';
+      formBody.style.opacity = '0';
+      setTimeout(() => {
+        formBody.style.display = 'none';
+        success.style.display  = 'flex';
+        document.getElementById('success-name').textContent = name + '!';
+        success.style.opacity  = '0';
+        success.style.transition = 'opacity 0.5s ease';
+        requestAnimationFrame(() => { success.style.opacity = '1'; });
+      }, 400);
+
+    } catch {
+      /* Show inline error — no page leave */
       btn.disabled = false;
-      btn.innerHTML = `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
+      btn.innerHTML = `<svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>&nbsp; Try Again`;
+      btn.style.background = 'linear-gradient(135deg,#ff4444,#ff7744)';
+      let errMsg = document.getElementById('form-err');
+      if (!errMsg) {
+        errMsg = document.createElement('p');
+        errMsg.id = 'form-err';
+        errMsg.style.cssText = 'font-size:0.75rem;color:#ff6b6b;margin-top:0.8rem;text-align:center;font-family:JetBrains Mono,monospace;';
+        btn.parentNode.insertBefore(errMsg, btn.nextSibling);
+      }
+      errMsg.textContent = '⚠ Something went wrong. Please try again.';
     }
   });
 </script>

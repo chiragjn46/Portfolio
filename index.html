@@ -56,9 +56,33 @@ body{font-family:var(--font-body);background:radial-gradient(ellipse at 20% 30%,
 @media(max-width:960px){.custom-cursor,.custom-cursor-dot{display:none}}
 .container{width:min(1200px,calc(100% - 3rem));margin:0 auto}
 section{padding:100px 0;position:relative}
-.blur-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:0.4}
-.orb-1{width:400px;height:400px;background:var(--cyan);top:-150px;left:-100px}
-.orb-2{width:500px;height:500px;background:var(--violet);bottom:-150px;right:-100px}
+/* === HERO BACKGROUND WITH CODING TEXTURE === */
+.hero-bg-code{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.coding-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,229,255,0.03) 0px,rgba(0,229,255,0.03) 1px,transparent 1px,transparent 2px);opacity:0.6;mix-blend-mode:overlay;animation:textureShimmer 8s ease-in-out infinite}
+@keyframes textureShimmer{0%{opacity:0.4}50%{opacity:0.8}100%{opacity:0.4}}
+.floating-code{position:absolute;font-family:var(--font-mono);font-size:0.7rem;opacity:0.08;color:var(--cyan);white-space:nowrap;animation:floatCode 20s linear infinite;user-select:none}
+@keyframes floatCode{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:0.12}90%{opacity:0.12}100%{transform:translateY(-20vh) rotate(2deg);opacity:0}}
+.floating-code:nth-child(2){left:5%;animation-duration:25s;animation-delay:0s;font-size:0.65rem}
+.floating-code:nth-child(3){left:15%;animation-duration:30s;animation-delay:2s;font-size:0.8rem}
+.floating-code:nth-child(4){left:25%;animation-duration:22s;animation-delay:5s;font-size:0.7rem}
+.floating-code:nth-child(5){left:35%;animation-duration:28s;animation-delay:1s;font-size:0.6rem}
+.floating-code:nth-child(6){left:45%;animation-duration:35s;animation-delay:7s;font-size:0.75rem}
+.floating-code:nth-child(7){left:55%;animation-duration:26s;animation-delay:3s;font-size:0.68rem}
+.floating-code:nth-child(8){left:65%;animation-duration:32s;animation-delay:10s;font-size:0.72rem}
+.floating-code:nth-child(9){left:75%;animation-duration:24s;animation-delay:4s;font-size:0.62rem}
+.floating-code:nth-child(10){left:85%;animation-duration:29s;animation-delay:8s;font-size:0.78rem}
+.floating-code:nth-child(11){left:95%;animation-duration:27s;animation-delay:6s;font-size:0.7rem}
+.floating-code:nth-child(12){left:12%;animation-duration:33s;animation-delay:12s;font-size:0.64rem}
+.floating-code:nth-child(13){left:42%;animation-duration:23s;animation-delay:9s;font-size:0.76rem}
+/* Matrix rain effect */
+.matrix-rain{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+.matrix-column{position:absolute;top:-20%;font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,229,255,0.06);white-space:pre;line-height:1.2;animation:matrixFall 12s linear infinite}
+@keyframes matrixFall{0%{transform:translateY(-100%)}100%{transform:translateY(100vh)}}
+/* Blur orbs */
+.blur-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:0.4;z-index:0}
+.orb-1{width:400px;height:400px;background:var(--cyan);top:-150px;left:-100px;animation:orbFloat 15s ease-in-out infinite}
+.orb-2{width:500px;height:500px;background:var(--violet);bottom:-150px;right:-100px;animation:orbFloat 18s ease-in-out infinite reverse}
+@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
 /* === HEADER & NAV === */
 header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(255,255,255,0.05)}
 .navbar{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
@@ -74,7 +98,7 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 @media(max-width:860px){.nav-links{display:none}}
 /* === HERO === */
 .hero{min-height:100vh;display:grid;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center}
+.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center;position:relative;z-index:2}
 .hero-tag{font-family:var(--font-mono);font-size:0.75rem;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.2rem}
 .hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:0.95;font-weight:800;margin-bottom:1.2rem}
 .hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -89,7 +113,7 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .stat-card{background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:20px;padding:1rem 1.5rem;backdrop-filter:blur(10px)}
 .stat-card strong{font-size:1.8rem;font-weight:800;display:block;background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-card span{font-size:0.75rem;color:var(--muted)}
-/* === LAPTOP 3D === */
+/* === LAPTOP 3D WITH SCROLL ANIMATION === */
 .laptop-scene{width:100%;max-width:520px;margin:0 auto;perspective:1200px}
 .laptop-lid{transform-style:preserve-3d;transform:rotateX(8deg) rotateY(-16deg);transition:transform 0.1s ease-out}
 .laptop-screen{background:linear-gradient(145deg,#1e2438,#0f1422);border-radius:18px 18px 6px 6px;padding:14px;border:1px solid rgba(0,229,255,0.2);box-shadow:0 30px 50px -20px rgba(0,0,0,0.7),inset 0 0 20px rgba(0,229,255,0.05)}
@@ -102,10 +126,13 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 #typewriter-text{color:#cbd5e1;font-size:0.8rem;line-height:1.5;min-height:4rem;font-weight:500}
 .typewriter-cursor{display:inline-block;width:2px;height:1rem;background-color:var(--cyan);margin-left:2px;animation:blink 1s step-end infinite;vertical-align:middle}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.code-line{height:8px;border-radius:6px;background:linear-gradient(90deg,rgba(0,229,255,0.5),rgba(139,92,246,0.25));margin:0.5rem 0}
-.code-line.short{width:60%}.code-line.mid{width:80%}
+.code-line{height:8px;border-radius:6px;background:linear-gradient(90deg,rgba(0,229,255,0.5),rgba(139,92,246,0.25));margin:0.5rem 0;animation:codePulse 3s ease-in-out infinite;will-change:opacity,transform}
+@keyframes codePulse{0%,100%{opacity:0.6;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.05)}}
+.code-line.short{width:60%;animation-delay:0.2s}.code-line.mid{width:80%;animation-delay:0.4s}
 .laptop-base{height:32px;background:linear-gradient(180deg,#1e2438,#0a0e18);border-radius:0 0 16px 16px;margin-top:-4px;transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.5)}
-.laptop-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:90%;height:50px;background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);pointer-events:none;z-index:-1}
+.laptop-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:90%;height:50px;background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);pointer-events:none;z-index:-1;animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:0.5;filter:blur(80px)}50%{opacity:1;filter:blur(100px)}}
+.hero-laptop{transform-origin:center bottom;will-change:transform,opacity}
 @media(max-width:860px){.laptop-scene{max-width:400px}.screen-content{padding:0.7rem}.typewriter-container{padding:0.7rem}#typewriter-text{font-size:0.7rem}}
 @media(max-width:540px){.laptop-scene{max-width:320px}.screen-bar{height:34px}.dot{width:8px;height:8px}.typewriter-prefix{font-size:0.6rem}#typewriter-text{font-size:0.65rem}}
 /* === SECTIONS === */
@@ -147,6 +174,7 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
   section{padding:70px 0}
   .container{width:calc(100% - 2rem)}
   .toast{white-space:normal;text-align:center;font-size:0.85rem;padding:10px 20px}
+  .floating-code,.matrix-rain{display:none}
 }
 @media(max-width:540px){
   .hero h1{font-size:2.5rem}
@@ -180,6 +208,32 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 
 <main id="main-content">
 <section class="hero" id="home">
+<!-- Coding Texture Background -->
+<div class="hero-bg-code">
+<div class="coding-texture"></div>
+<div class="floating-code">&lt;html&gt; &lt;head&gt; &lt;title&gt;Chirag.dev&lt;/title&gt;</div>
+<div class="floating-code">const developer = { name: "Chirag", passion: "coding" };</div>
+<div class="floating-code">function createAwesomeUI() { return "✨ amazing"; }</div>
+<div class="floating-code">npm run build &amp;&amp; npm run deploy</div>
+<div class="floating-code">console.log("Hello World from Chirag!");</div>
+<div class="floating-code">&lt;div class="hero"&gt; &lt;h1&gt;Welcome&lt;/h1&gt; &lt;/div&gt;</div>
+<div class="floating-code">import { useState, useEffect } from 'react';</div>
+<div class="floating-code">.gradient-bg { background: linear-gradient(...); }</div>
+<div class="floating-code">git commit -m "feat: add awesome portfolio"</div>
+<div class="floating-code">@keyframes float { 0% { transform: translateY(0); } }</div>
+<div class="floating-code">{"name":"Chirag Jain","role":"Frontend Developer"}</div>
+<div class="floating-code">export default function Portfolio() { return &lt;App /&gt; }</div>
+</div>
+<!-- Matrix Rain Effect -->
+<div class="matrix-rain">
+<div class="matrix-column" style="left:5%;animation-duration:14s">010011 100101 001110</div>
+<div class="matrix-column" style="left:20%;animation-duration:18s">110100 011001 101010</div>
+<div class="matrix-column" style="left:35%;animation-duration:12s">001011 110100 011101</div>
+<div class="matrix-column" style="left:50%;animation-duration:16s">100101 011001 010110</div>
+<div class="matrix-column" style="left:65%;animation-duration:15s">011100 101001 110010</div>
+<div class="matrix-column" style="left:80%;animation-duration:19s">010010 011101 001011</div>
+<div class="matrix-column" style="left:92%;animation-duration:13s">101101 010011 100100</div>
+</div>
 <div class="blur-orb orb-1"></div>
 <div class="blur-orb orb-2"></div>
 <div class="container hero-grid">
@@ -219,10 +273,10 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 </div>
 </div>
 </div>
+</div>
 <div class="laptop-glow"></div>
 </div>
 <div class="laptop-base"></div>
-</div>
 </div>
 </div>
 </div>
@@ -267,7 +321,6 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <h2 class="section-title reveal">Featured <span>Projects</span></h2>
 <p class="section-sub reveal">Real-world projects built from scratch — focused on clean code, performance, and user experience.</p>
 <div class="projects-grid">
-<!-- Hospital Management Project -->
 <div class="project-card card reveal">
 <div class="project-img">
 <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Hospital Management System Dashboard" loading="lazy">
@@ -277,7 +330,6 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Dashboard</span></div>
 <div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
 </div>
-<!-- Business Analytics Project -->
 <div class="project-card card reveal">
 <div class="project-img">
 <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Business Analytics Dashboard" loading="lazy">
@@ -287,7 +339,6 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <div class="project-tags"><span class="tag">Analytics</span><span class="tag">Charts.js</span><span class="tag">Responsive</span></div>
 <div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
 </div>
-<!-- Portfolio Website Project (New) -->
 <div class="project-card card reveal">
 <div class="project-img">
 <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Modern Portfolio Website" loading="lazy">
@@ -297,7 +348,6 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <div class="project-tags"><span class="tag">3D UI</span><span class="tag">Animations</span><span class="tag">Responsive</span><span class="tag">Performance</span></div>
 <div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
 </div>
-<!-- E-commerce Project -->
 <div class="project-card card reveal">
 <div class="project-img">
 <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop" alt="E-commerce Platform" loading="lazy">
@@ -316,8 +366,8 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <div class="section-kicker reveal">// FEEDBACK</div>
 <h2 class="section-title reveal">Client <span>Voice</span></h2>
 <div class="testimonial-grid">
-<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">“Professional execution, smooth UI, excellent responsiveness, and impressive attention to detail.”</p><div><strong>Rahul Sharma</strong><p style="color:var(--muted);font-size:0.75rem">Startup Founder</p></div></div>
-<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">“The animations feel premium and performance remained excellent even on mobile devices.”</p><div><strong>Anjali Mehta</strong><p style="color:var(--muted);font-size:0.75rem">Creative Director</p></div></div>
+<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">"Professional execution, smooth UI, excellent responsiveness, and impressive attention to detail."</p><div><strong>Rahul Sharma</strong><p style="color:var(--muted);font-size:0.75rem">Startup Founder</p></div></div>
+<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">"The animations feel premium and performance remained excellent even on mobile devices."</p><div><strong>Anjali Mehta</strong><p style="color:var(--muted);font-size:0.75rem">Creative Director</p></div></div>
 </div>
 </div>
 </section>
@@ -440,18 +490,33 @@ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 reveals.forEach(r=>obs.observe(r));
 
-// 3D laptop parallax
+// 3D laptop with scroll-based animation
 const laptop=document.getElementById('laptop3d');
+const heroLaptop=document.querySelector('.hero-laptop');
 if(laptop&&window.innerWidth>768){
 let targetRX=8,targetRY=-16;
 let currentRX=8,currentRY=-16;
+let scrollY=0;
+
 window.addEventListener('scroll',()=>{
-const scrollY=window.scrollY;
-const maxScroll=document.documentElement.scrollHeight-window.innerHeight;
-const progress=Math.min(1,scrollY/maxScroll);
-targetRX=8+(progress*14);
-targetRY=-16+(progress*20);
+scrollY=window.scrollY;
+const heroSection=document.querySelector('.hero');
+const heroHeight=heroSection.offsetHeight;
+const scrollProgress=Math.min(1,scrollY/(heroHeight*0.6));
+
+// Laptop rotates and moves on scroll
+targetRX=8+(scrollProgress*20);
+targetRY=-16+(scrollProgress*25);
+
+// Subtle scale and vertical translation
+if(heroLaptop){
+const scale=1-(scrollProgress*0.15);
+const translateY=scrollProgress*80;
+heroLaptop.style.transform=`translateY(${translateY}px) scale(${scale})`;
+heroLaptop.style.opacity=1-(scrollProgress*0.4);
+}
 });
+
 function animateLaptop(){
 currentRX+=(targetRX-currentRX)*0.08;
 currentRY+=(targetRY-currentRY)*0.08;

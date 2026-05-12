@@ -503,7 +503,7 @@ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 reveals.forEach(r=>obs.observe(r));
 
-// 3D Hero Background with Perspective Scroll - Stays until 80% scroll
+// 3D Hero Background with Perspective Scroll - Stays until 80% scroll, TEXT STAYS VISIBLE
 const heroBg=document.getElementById('heroBg');
 const laptop=document.getElementById('laptop3d');
 const heroLaptop=document.querySelector('.hero-laptop');
@@ -532,10 +532,10 @@ if(heroBg){
   heroBg.style.opacity=1-(scrollProgress*0.3);
 }
 
-// Left content (text) moves down and fades
+// Left content (text) moves down but STAYS VISIBLE until 80%
 if(heroContentLeft){
   const contentTranslate=scrollProgress*100;
-  const contentOpacity=1-(scrollProgress*0.8);
+  const contentOpacity=1; // TEXT STAYS FULLY VISIBLE
   heroContentLeft.style.transform=`translateY(${contentTranslate}px) translateZ(${scrollProgress*20}px)`;
   heroContentLeft.style.opacity=contentOpacity;
 }

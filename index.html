@@ -56,10 +56,18 @@ body{font-family:var(--font-body);background:radial-gradient(ellipse at 20% 30%,
 @media(max-width:960px){.custom-cursor,.custom-cursor-dot{display:none}}
 .container{width:min(1200px,calc(100% - 3rem));margin:0 auto}
 section{padding:100px 0;position:relative}
-/* === HERO BACKGROUND WITH CODING TEXTURE === */
+/* === HERO BACKGROUND WITH CODING TEXTURE & 3D DEPTH === */
 .hero-bg-code{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.coding-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,229,255,0.03) 0px,rgba(0,229,255,0.03) 1px,transparent 1px,transparent 2px);opacity:0.6;mix-blend-mode:overlay;animation:textureShimmer 8s ease-in-out infinite}
+.coding-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,229,255,0.03) 0px,rgba(0,229,255,0.03) 1px,transparent 1px,transparent 2px);opacity:0.6;mix-blend-mode:overlay;animation:textureShimmer 8s ease-in-out infinite;will-change:opacity}
 @keyframes textureShimmer{0%{opacity:0.4}50%{opacity:0.8}100%{opacity:0.4}}
+/* 3D depth effect - creates layered background */
+.depth-layer{position:absolute;inset:0;pointer-events:none}
+.depth-layer-1{background:radial-gradient(circle at 20% 30%, rgba(0,229,255,0.08) 0%, transparent 50%);animation:depthShift1 15s ease-in-out infinite;will-change:transform}
+.depth-layer-2{background:radial-gradient(circle at 80% 70%, rgba(139,92,246,0.06) 0%, transparent 50%);animation:depthShift2 18s ease-in-out infinite;will-change:transform}
+.depth-layer-3{background:linear-gradient(180deg, rgba(0,229,255,0.04) 0%, transparent 50%, rgba(139,92,246,0.04) 100%);animation:depthShift3 20s ease-in-out infinite;will-change:transform}
+@keyframes depthShift1{0%{transform:translateZ(0) scale(1)}50%{transform:translateZ(20px) scale(1.02)}100%{transform:translateZ(0) scale(1)}}
+@keyframes depthShift2{0%{transform:translateZ(-20px) scale(0.98)}50%{transform:translateZ(0) scale(1)}100%{transform:translateZ(-20px) scale(0.98)}}
+@keyframes depthShift3{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
 .floating-code{position:absolute;font-family:var(--font-mono);font-size:0.7rem;opacity:0.08;color:var(--cyan);white-space:nowrap;animation:floatCode 20s linear infinite;user-select:none}
 @keyframes floatCode{0%{transform:translateY(100vh) rotate(0deg);opacity:0}10%{opacity:0.12}90%{opacity:0.12}100%{transform:translateY(-20vh) rotate(2deg);opacity:0}}
 .floating-code:nth-child(2){left:5%;animation-duration:25s;animation-delay:0s;font-size:0.65rem}
@@ -82,7 +90,7 @@ section{padding:100px 0;position:relative}
 .blur-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;opacity:0.4;z-index:0}
 .orb-1{width:400px;height:400px;background:var(--cyan);top:-150px;left:-100px;animation:orbFloat 15s ease-in-out infinite}
 .orb-2{width:500px;height:500px;background:var(--violet);bottom:-150px;right:-100px;animation:orbFloat 18s ease-in-out infinite reverse}
-@keyframes orbFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) translateZ(0)}50%{transform:translate(30px,-30px) translateZ(10px)}}
 /* === HEADER & NAV === */
 header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);background:rgba(5,8,16,0.85);border-bottom:1px solid rgba(255,255,255,0.05)}
 .navbar{height:var(--nav-h);display:flex;align-items:center;justify-content:space-between}
@@ -97,8 +105,8 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,229,255,0.4)}
 @media(max-width:860px){.nav-links{display:none}}
 /* === HERO === */
-.hero{min-height:100vh;display:grid;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center;position:relative;z-index:2}
+.hero{min-height:100vh;display:grid;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden;perspective:1200px}
+.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center;position:relative;z-index:2;transform-style:preserve-3d}
 .hero-tag{font-family:var(--font-mono);font-size:0.75rem;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.2rem}
 .hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:0.95;font-weight:800;margin-bottom:1.2rem}
 .hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -133,6 +141,8 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .laptop-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:90%;height:50px;background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);pointer-events:none;z-index:-1;animation:glowPulse 4s ease-in-out infinite}
 @keyframes glowPulse{0%,100%{opacity:0.5;filter:blur(80px)}50%{opacity:1;filter:blur(100px)}}
 .hero-laptop{transform-origin:center bottom;will-change:transform,opacity}
+/* 3D perspective for hero content */
+.hero-content-left{transform-style:preserve-3d;will-change:transform}
 @media(max-width:860px){.laptop-scene{max-width:400px}.screen-content{padding:0.7rem}.typewriter-container{padding:0.7rem}#typewriter-text{font-size:0.7rem}}
 @media(max-width:540px){.laptop-scene{max-width:320px}.screen-bar{height:34px}.dot{width:8px;height:8px}.typewriter-prefix{font-size:0.6rem}#typewriter-text{font-size:0.65rem}}
 /* === SECTIONS === */
@@ -208,9 +218,12 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 
 <main id="main-content">
 <section class="hero" id="home">
-<!-- Coding Texture Background -->
-<div class="hero-bg-code">
+<!-- Coding Texture Background with 3D Depth -->
+<div class="hero-bg-code" id="heroBg">
 <div class="coding-texture"></div>
+<div class="depth-layer depth-layer-1"></div>
+<div class="depth-layer depth-layer-2"></div>
+<div class="depth-layer depth-layer-3"></div>
 <div class="floating-code">&lt;html&gt; &lt;head&gt; &lt;title&gt;Chirag.dev&lt;/title&gt;</div>
 <div class="floating-code">const developer = { name: "Chirag", passion: "coding" };</div>
 <div class="floating-code">function createAwesomeUI() { return "✨ amazing"; }</div>
@@ -237,7 +250,7 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 <div class="blur-orb orb-1"></div>
 <div class="blur-orb orb-2"></div>
 <div class="container hero-grid">
-<div>
+<div class="hero-content-left">
 <div class="hero-tag">✦ FRONTEND ENGINEER / UI DEVELOPER</div>
 <h1>Chirag <span>Jain</span></h1>
 <p class="hero-desc">Building premium digital experiences with modern frontend engineering, responsive interfaces, and performance-driven animations. Based in Ganj Basoda, MP.</p>
@@ -490,38 +503,63 @@ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
 reveals.forEach(r=>obs.observe(r));
 
-// 3D laptop with scroll-based animation
+// 3D Hero Background with Perspective Scroll - Stays until 80% scroll
+const heroBg=document.getElementById('heroBg');
 const laptop=document.getElementById('laptop3d');
 const heroLaptop=document.querySelector('.hero-laptop');
-if(laptop&&window.innerWidth>768){
+const heroContentLeft=document.querySelector('.hero-content-left');
+
+if(window.innerWidth>768){
 let targetRX=8,targetRY=-16;
 let currentRX=8,currentRY=-16;
-let scrollY=0;
 
 window.addEventListener('scroll',()=>{
-scrollY=window.scrollY;
+const scrollY=window.scrollY;
 const heroSection=document.querySelector('.hero');
 const heroHeight=heroSection.offsetHeight;
-const scrollProgress=Math.min(1,scrollY/(heroHeight*0.6));
+const nextSection=document.querySelector('#about');
+const nextSectionTop=nextSection.offsetTop;
 
-// Laptop rotates and moves on scroll
-targetRX=8+(scrollProgress*20);
-targetRY=-16+(scrollProgress*25);
+// Calculate progress: 0 when at hero start, 1 when 80% scrolled
+const scrollUntilAbout=nextSectionTop-window.innerHeight;
+const scrollProgress=Math.min(1,Math.max(0,scrollY/scrollUntilAbout));
 
-// Subtle scale and vertical translation
+// Hero Background stays and gets 3D effect
+if(heroBg){
+  // Background stays in place (fixed effect) and gets parallax depth
+  const bgDepth=scrollProgress*30;
+  heroBg.style.transform=`perspective(1000px) rotateX(${scrollProgress*15}deg) translateZ(${bgDepth}px)`;
+  heroBg.style.opacity=1-(scrollProgress*0.3);
+}
+
+// Left content (text) moves down and fades
+if(heroContentLeft){
+  const contentTranslate=scrollProgress*100;
+  const contentOpacity=1-(scrollProgress*0.8);
+  heroContentLeft.style.transform=`translateY(${contentTranslate}px) translateZ(${scrollProgress*20}px)`;
+  heroContentLeft.style.opacity=contentOpacity;
+}
+
+// Laptop rotates and moves
+if(laptop){
+  targetRX=8+(scrollProgress*20);
+  targetRY=-16+(scrollProgress*25);
+}
+
 if(heroLaptop){
-const scale=1-(scrollProgress*0.15);
-const translateY=scrollProgress*80;
-heroLaptop.style.transform=`translateY(${translateY}px) scale(${scale})`;
-heroLaptop.style.opacity=1-(scrollProgress*0.4);
+  const laptopScale=1-(scrollProgress*0.2);
+  const laptopTranslate=scrollProgress*120;
+  const laptopOpacity=1-(scrollProgress*0.5);
+  heroLaptop.style.transform=`translateY(${laptopTranslate}px) scale(${laptopScale}) translateZ(${scrollProgress*15}px)`;
+  heroLaptop.style.opacity=laptopOpacity;
 }
 });
 
 function animateLaptop(){
-currentRX+=(targetRX-currentRX)*0.08;
-currentRY+=(targetRY-currentRY)*0.08;
-laptop.style.transform=`rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
-requestAnimationFrame(animateLaptop);
+  currentRX+=(targetRX-currentRX)*0.08;
+  currentRY+=(targetRY-currentRY)*0.08;
+  laptop.style.transform=`rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
+  requestAnimationFrame(animateLaptop);
 }
 animateLaptop();
 }

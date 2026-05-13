@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Chirag Jain — Frontend Developer & UI Engineer</title>
-<meta name="description" content="Chirag Jain is a frontend developer & UI engineer from Ganj Basoda, MP, India — specializing in HTML5, CSS3, JavaScript, WordPress, and performance-driven respon[...]
+<meta name="description" content="Chirag Jain is a frontend developer & UI engineer from Ganj Basoda, MP, India — specializing in HTML5, CSS3, JavaScript, WordPress, and performance-driven responsive web experiences.">
 <meta name="author" content="Chirag Jain">
 <meta name="keywords" content="frontend developer, UI engineer, web developer India, JavaScript, WordPress, responsive design, performance, Chirag Jain">
 <meta name="robots" content="index,follow">
@@ -20,11 +20,11 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Chirag Jain — Frontend Developer">
 <meta name="twitter:description" content="Frontend dev & UI engineer specializing in modern web experiences.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050810'/%3E%3Ctext x='[...]
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050810'/%3E%3Ctext x='5' y='24' font-family='monospace' font-size='18' font-weight='900' fill='%2300e5ff'%3Ecj%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;7[...]
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Chirag Jain","url":"https://chiragjn46.github.io/Portfolio/","jobTitle":"Frontend Developer","address":[...]
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500;600&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Chirag Jain","url":"https://chiragjn46.github.io/Portfolio/","jobTitle":"Frontend Developer","address":{"@type":"PostalAddress","addressLocality":"Ganj Basoda","addressRegion":"Madhya Pradesh","addressCountry":"IN"},"email":"chiragjainsinghai46@gmail.com","telephone":"+919516016816","sameAs":["https://github.com/chiragjn46","https://www.linkedin.com/in/chirag-jain-024a0b1a2"],"knowsAbout":["HTML5","CSS3","JavaScript","WordPress","Responsive Design","SEO","Performance Optimization"]}</script>
 <style>
 /* === RESET & VARIABLES === */
 *{margin:0;padding:0;box-sizing:border-box}
@@ -46,10 +46,10 @@ body{font-family:var(--font-body);background:radial-gradient(ellipse at 20% 30%,
 .skip-link{position:absolute;top:-100px;left:1rem;background:var(--cyan);color:#000;padding:0.75rem 1.25rem;border-radius:30px;font-weight:600;z-index:10000;text-decoration:none}
 .skip-link:focus{top:1rem}
 #scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--cyan),var(--violet));z-index:10000;pointer-events:none}
-#back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.3);color:var(--cyan);font-size:1.4rem;c[...]
+#back-to-top{position:fixed;bottom:2rem;right:2rem;width:48px;height:48px;border-radius:50%;background:rgba(0,229,255,0.1);border:1px solid rgba(0,229,255,0.3);color:var(--cyan);font-size:1.4rem;cursor:pointer;opacity:0;pointer-events:none;transition:all 0.3s ease;z-index:999;display:flex;align-items:center;justify-content:center}
 #back-to-top.visible{opacity:1;pointer-events:auto}
 #back-to-top:hover{background:rgba(0,229,255,0.2);transform:translateY(-3px);box-shadow:var(--cyan-glow)}
-.custom-cursor{position:fixed;width:28px;height:28px;border-radius:50%;background:rgba(0,229,255,0.08);border:1.5px solid var(--cyan);pointer-events:none;z-index:9999;transform:translate(-50%,-50%[...]
+.custom-cursor{position:fixed;width:28px;height:28px;border-radius:50%;background:rgba(0,229,255,0.08);border:1.5px solid var(--cyan);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s;backdrop-filter:blur(4px)}
 .custom-cursor-dot{position:fixed;width:4px;height:4px;background:var(--cyan);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%)}
 .custom-cursor.active{width:48px;height:48px;background:rgba(0,229,255,0.12);border-color:var(--cyan);box-shadow:0 0 25px rgba(0,229,255,0.5)}
 .custom-cursor-dot.active{width:8px;height:8px;background:#fff}
@@ -58,7 +58,7 @@ body{font-family:var(--font-body);background:radial-gradient(ellipse at 20% 30%,
 section{padding:100px 0;position:relative}
 /* === HERO BACKGROUND WITH CODING TEXTURE & 3D DEPTH === */
 .hero-bg-code{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
-.coding-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,229,255,0.03) 0px,rgba(0,229,255,0.03) 1px,transparent 1px,transparent 2px);opacity:0.6;mix-blend-m[...]
+.coding-texture{position:absolute;inset:0;background-image:repeating-linear-gradient(0deg,rgba(0,229,255,0.03) 0px,rgba(0,229,255,0.03) 1px,transparent 1px,transparent 2px);opacity:0.6;mix-blend-mode:overlay;animation:textureShimmer 8s ease-in-out infinite;will-change:opacity}
 @keyframes textureShimmer{0%{opacity:0.4}50%{opacity:0.8}100%{opacity:0.4}}
 /* 3D depth effect - creates layered background */
 .depth-layer{position:absolute;inset:0;pointer-events:none}
@@ -101,12 +101,12 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;background:var(--cyan);transition:width 0.3s}
 .nav-links a:hover,.nav-links a.active{color:var(--cyan)}
 .nav-links a:hover::after,.nav-links a.active::after{width:100%}
-.nav-cta{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#000;padding:0.6rem 1.4rem;border-radius:40px;font-weight:600;font-size:0.8rem;text-decoration:none;transition:transform[...]
+.nav-cta{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#000;padding:0.6rem 1.4rem;border-radius:40px;font-weight:600;font-size:0.8rem;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 5px 20px rgba(0,229,255,0.4)}
 @media(max-width:860px){.nav-links{display:none}}
 /* === HERO === */
-.hero{min-height:100vh;display:grid;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center}
+.hero{min-height:100vh;display:grid;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden;perspective:1200px}
+.hero-grid{display:grid;grid-template-columns:1fr 0.9fr;gap:3rem;align-items:center;position:relative;z-index:2;transform-style:preserve-3d}
 .hero-tag{font-family:var(--font-mono);font-size:0.75rem;color:var(--cyan);letter-spacing:3px;text-transform:uppercase;margin-bottom:1.2rem}
 .hero h1{font-size:clamp(3rem,6vw,5.2rem);line-height:0.95;font-weight:800;margin-bottom:1.2rem}
 .hero h1 span{background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -119,12 +119,12 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .btn-outline:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
 .hero-stats{display:flex;gap:2rem;flex-wrap:wrap}
 .stat-card{background:rgba(255,255,255,0.03);border:1px solid var(--border2);border-radius:20px;padding:1rem 1.5rem;backdrop-filter:blur(10px)}
-.stat-card strong{font-size:1.8rem;font-weight:800;display:block;background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent[...]
+.stat-card strong{font-size:1.8rem;font-weight:800;display:block;background:linear-gradient(135deg,var(--cyan),var(--violet-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .stat-card span{font-size:0.75rem;color:var(--muted)}
-/* === LAPTOP 3D === */
+/* === LAPTOP 3D WITH SCROLL ANIMATION === */
 .laptop-scene{width:100%;max-width:520px;margin:0 auto;perspective:1200px}
 .laptop-lid{transform-style:preserve-3d;transform:rotateX(8deg) rotateY(-16deg);transition:transform 0.1s ease-out}
-.laptop-screen{background:linear-gradient(145deg,#1e2438,#0f1422);border-radius:18px 18px 6px 6px;padding:14px;border:1px solid rgba(0,229,255,0.2);box-shadow:0 30px 50px -20px rgba(0,0,0,0.7),ins[...]
+.laptop-screen{background:linear-gradient(145deg,#1e2438,#0f1422);border-radius:18px 18px 6px 6px;padding:14px;border:1px solid rgba(0,229,255,0.2);box-shadow:0 30px 50px -20px rgba(0,0,0,0.7),inset 0 0 20px rgba(0,229,255,0.05)}
 .screen-ui{background:#050810;border-radius:12px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,229,255,0.08)}
 .screen-bar{height:40px;background:rgba(255,255,255,0.03);display:flex;align-items:center;padding:0 14px;gap:8px;border-bottom:1px solid rgba(0,229,255,0.1)}
 .dot{width:11px;height:11px;border-radius:50%}
@@ -134,10 +134,15 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 #typewriter-text{color:#cbd5e1;font-size:0.8rem;line-height:1.5;min-height:4rem;font-weight:500}
 .typewriter-cursor{display:inline-block;width:2px;height:1rem;background-color:var(--cyan);margin-left:2px;animation:blink 1s step-end infinite;vertical-align:middle}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-.code-line{height:8px;border-radius:6px;background:linear-gradient(90deg,rgba(0,229,255,0.5),rgba(139,92,246,0.25));margin:0.5rem 0}
-.code-line.short{width:60%}.code-line.mid{width:80%}
+.code-line{height:8px;border-radius:6px;background:linear-gradient(90deg,rgba(0,229,255,0.5),rgba(139,92,246,0.25));margin:0.5rem 0;animation:codePulse 3s ease-in-out infinite;will-change:opacity,transform}
+@keyframes codePulse{0%,100%{opacity:0.6;transform:scaleX(1)}50%{opacity:1;transform:scaleX(1.05)}}
+.code-line.short{width:60%;animation-delay:0.2s}.code-line.mid{width:80%;animation-delay:0.4s}
 .laptop-base{height:32px;background:linear-gradient(180deg,#1e2438,#0a0e18);border-radius:0 0 16px 16px;margin-top:-4px;transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.5)}
-.laptop-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:90%;height:50px;background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);pointer-events:no[...]
+.laptop-glow{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);width:90%;height:50px;background:radial-gradient(ellipse,rgba(0,229,255,0.15) 0%,transparent 70%);pointer-events:none;z-index:-1;animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:0.5;filter:blur(80px)}50%{opacity:1;filter:blur(100px)}}
+.hero-laptop{transform-origin:center bottom;will-change:transform,opacity}
+/* 3D perspective for hero content */
+.hero-content-left{transform-style:preserve-3d;will-change:transform}
 @media(max-width:860px){.laptop-scene{max-width:400px}.screen-content{padding:0.7rem}.typewriter-container{padding:0.7rem}#typewriter-text{font-size:0.7rem}}
 @media(max-width:540px){.laptop-scene{max-width:320px}.screen-bar{height:34px}.dot{width:8px;height:8px}.typewriter-prefix{font-size:0.6rem}#typewriter-text{font-size:0.65rem}}
 /* === SECTIONS === */
@@ -166,11 +171,11 @@ header{position:fixed;top:0;width:100%;z-index:1000;backdrop-filter:blur(20px);b
 .contact-card{display:flex;gap:1rem;align-items:center;padding:0.8rem 0}
 .contact-card i{font-size:1.5rem;color:var(--cyan)}
 .social-links{display:flex;gap:1rem;margin-top:1.5rem}
-.social-links a{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;transition:all 0.2s;text-decora[...]
+.social-links a{width:44px;height:44px;border-radius:14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);display:grid;place-items:center;transition:all 0.2s;text-decoration:none;color:var(--text);font-size:1.2rem}
 .social-links a:hover{transform:translateY(-3px);background:rgba(0,229,255,0.1);color:var(--cyan)}
 footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2rem}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:linear-gradient(135deg,var(--cyan),var(--violet));color:#000;padding:12px 24px;border-radius:50p[...]
+.toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%) translateY(100px);background:linear-gradient(135deg,var(--cyan),var(--violet));color:#000;padding:12px 24px;border-radius:50px;font-weight:600;z-index:10001;transition:transform 0.3s;pointer-events:none;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
 .toast.show{transform:translateX(-50%) translateY(0)}
 @media(max-width:860px){
   .hero-grid{grid-template-columns:1fr}
@@ -179,6 +184,7 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
   section{padding:70px 0}
   .container{width:calc(100% - 2rem)}
   .toast{white-space:normal;text-align:center;font-size:0.85rem;padding:10px 20px}
+  .floating-code,.matrix-rain{display:none}
 }
 @media(max-width:540px){
   .hero h1{font-size:2.5rem}
@@ -212,37 +218,67 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 
 <main id="main-content">
 <section class="hero" id="home">
+<!-- Coding Texture Background with 3D Depth -->
+<div class="hero-bg-code" id="heroBg">
+<div class="coding-texture"></div>
+<div class="depth-layer depth-layer-1"></div>
+<div class="depth-layer depth-layer-2"></div>
+<div class="depth-layer depth-layer-3"></div>
+<div class="floating-code">&lt;html&gt; &lt;head&gt; &lt;title&gt;Chirag.dev&lt;/title&gt;</div>
+<div class="floating-code">const developer = { name: "Chirag", passion: "coding" };</div>
+<div class="floating-code">function createAwesomeUI() { return "✨ amazing"; }</div>
+<div class="floating-code">npm run build &amp;&amp; npm run deploy</div>
+<div class="floating-code">console.log("Hello World from Chirag!");</div>
+<div class="floating-code">&lt;div class="hero"&gt; &lt;h1&gt;Welcome&lt;/h1&gt; &lt;/div&gt;</div>
+<div class="floating-code">import { useState, useEffect } from 'react';</div>
+<div class="floating-code">.gradient-bg { background: linear-gradient(...); }</div>
+<div class="floating-code">git commit -m "feat: add awesome portfolio"</div>
+<div class="floating-code">@keyframes float { 0% { transform: translateY(0); } }</div>
+<div class="floating-code">{"name":"Chirag Jain","role":"Frontend Developer"}</div>
+<div class="floating-code">export default function Portfolio() { return &lt;App /&gt; }</div>
+</div>
+<!-- Matrix Rain Effect -->
+<div class="matrix-rain">
+<div class="matrix-column" style="left:5%;animation-duration:14s">010011 100101 001110</div>
+<div class="matrix-column" style="left:20%;animation-duration:18s">110100 011001 101010</div>
+<div class="matrix-column" style="left:35%;animation-duration:12s">001011 110100 011101</div>
+<div class="matrix-column" style="left:50%;animation-duration:16s">100101 011001 010110</div>
+<div class="matrix-column" style="left:65%;animation-duration:15s">011100 101001 110010</div>
+<div class="matrix-column" style="left:80%;animation-duration:19s">010010 011101 001011</div>
+<div class="matrix-column" style="left:92%;animation-duration:13s">101101 010011 100100</div>
+</div>
 <div class="blur-orb orb-1"></div>
 <div class="blur-orb orb-2"></div>
 <div class="container hero-grid">
-<div>
-<div class="hero-tag reveal">✦ FRONTEND ENGINEER / UI DEVELOPER</div>
-<h1 class="reveal">Chirag <span>Jain</span></h1>
-<p class="hero-desc reveal">Building premium digital experiences with modern frontend engineering, responsive interfaces, and performance-driven animations. Based in Ganj Basoda, MP.</p>
-<div class="hero-btns reveal">
+<div class="hero-content-left">
+<div class="hero-tag">✦ FRONTEND ENGINEER / UI DEVELOPER</div>
+<h1>Chirag <span>Jain</span></h1>
+<p class="hero-desc">Building premium digital experiences with modern frontend engineering, responsive interfaces, and performance-driven animations. Based in Ganj Basoda, MP.</p>
+<div class="hero-btns">
 <a href="#projects" class="btn-primary">✨ View Projects</a>
 <a href="#contact" class="btn-outline">📩 Contact Me</a>
 </div>
-<div class="hero-stats reveal">
+<div class="hero-stats">
 <div class="stat-card"><strong>25+</strong><span>Projects</span></div>
 <div class="stat-card"><strong>98%</strong><span>Performance</span></div>
 <div class="stat-card"><strong>2+</strong><span>Years Exp</span></div>
 </div>
 </div>
-<div class="hero-laptop reveal">
+<div class="hero-laptop">
 <div class="laptop-scene">
-<div class="laptop-lid">
+<div class="laptop-lid" id="laptop3d">
 <div class="laptop-screen">
 <div class="screen-ui">
 <div class="screen-bar">
-<div class="dot" style="background:#ff6b6b"></div>
-<div class="dot" style="background:#ffd93d"></div>
-<div class="dot" style="background:#6bcf7f"></div>
+<div class="dot" style="background:#ff5f57"></div>
+<div class="dot" style="background:#ffbd2f"></div>
+<div class="dot" style="background:#28ca42"></div>
 </div>
 <div class="screen-content">
 <div class="typewriter-container">
-<span class="typewriter-prefix">> FRONTEND_MAGIC</span>
-<div id="typewriter-text">const portfolio = { skills: ['React', 'Vue', 'Tailwind'], mission: 'Build amazing UX' }<span class="typewriter-cursor"></span></div>
+<span class="typewriter-prefix">$> skills --active</span>
+<div id="typewriter-text"></div>
+<span class="typewriter-cursor"></span>
 </div>
 <div class="code-line"></div>
 <div class="code-line short"></div>
@@ -251,140 +287,355 @@ footer{padding:2rem 0;border-top:1px solid rgba(255,255,255,0.05);margin-top:2re
 </div>
 </div>
 </div>
-<div class="laptop-base"></div>
 <div class="laptop-glow"></div>
 </div>
+<div class="laptop-base"></div>
 </div>
 </div>
 </div>
 </section>
 
-<script>
-// Bidirectional Scroll Reveal Effect
-const observerOptions = {
-  threshold: 0.15,
-  rootMargin: '0px'
-};
+<section id="about">
+<div class="container">
+<div class="section-kicker reveal">// ABOUT ME</div>
+<h2 class="section-title reveal">Crafting <span>Modern Interfaces</span></h2>
+<p class="section-sub reveal">Frontend developer focused on scalable UI systems, responsive web experiences, and polished micro-interactions.</p>
+<div class="about-grid">
+<div class="card reveal">
+<h3 style="margin-bottom:1rem">Professional Summary</h3>
+<div class="about-item"><div class="about-icon">📱</div><div><h4>Responsive Design</h4><p style="color:var(--muted);font-size:0.85rem">Mobile-first layouts optimized for all screen sizes</p></div></div>
+<div class="about-item"><div class="about-icon">♿</div><div><h4>Accessibility First</h4><p style="color:var(--muted);font-size:0.85rem">Semantic HTML, keyboard nav, WCAG-focused</p></div></div>
+<div class="about-item"><div class="about-icon">⚡</div><div><h4>Performance Optimized</h4><p style="color:var(--muted);font-size:0.85rem">GPU-accelerated animations, lazy loading</p></div></div>
+</div>
+<div class="card reveal">
+<h3 style="margin-bottom:1rem">Tech Overview</h3>
+<p style="color:var(--muted);margin-bottom:1.2rem">Experienced building production-ready interfaces with modern web technologies.</p>
+<div><span class="skill-pill">HTML5</span><span class="skill-pill">CSS3</span><span class="skill-pill">JavaScript ES6+</span><span class="skill-pill">WordPress</span><span class="skill-pill">Git</span><span class="skill-pill">SEO</span><span class="skill-pill">Web Vitals</span></div>
+</div>
+</div>
+</div>
+</section>
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // Element is in viewport - add visible class
-      entry.target.classList.add('visible');
-    } else {
-      // Element is out of viewport - remove visible class
-      entry.target.classList.remove('visible');
-    }
-  });
-}, observerOptions);
+<section id="skills" style="background:rgba(0,0,0,0.2)">
+<div class="container">
+<div class="section-kicker reveal">// EXPERTISE</div>
+<h2 class="section-title reveal">Technical <span>Stack</span></h2>
+<div class="skills-grid reveal">
+<div class="card"><h3>Frontend Engineering</h3><p style="color:var(--muted);margin-top:0.5rem">HTML5, CSS3, JavaScript ES6+, animations, responsive layouts, accessibility, semantic architecture</p></div>
+<div class="card"><h3>UI & Performance</h3><p style="color:var(--muted);margin-top:0.5rem">Core Web Vitals, GPU acceleration, smooth interactions, cross-browser compatibility</p></div>
+<div class="card"><h3>CMS & SEO</h3><p style="color:var(--muted);margin-top:0.5rem">WordPress customization, metadata optimization, structured data, SEO-friendly development</p></div>
+</div>
+</div>
+</section>
 
-// Observe all reveal elements
-document.querySelectorAll('.reveal').forEach(element => {
-  observer.observe(element);
-});
+<section id="projects">
+<div class="container">
+<div class="section-kicker reveal">// PORTFOLIO</div>
+<h2 class="section-title reveal">Featured <span>Projects</span></h2>
+<p class="section-sub reveal">Real-world projects built from scratch — focused on clean code, performance, and user experience.</p>
+<div class="projects-grid">
+<div class="project-card card reveal">
+<div class="project-img">
+<img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop" alt="Hospital Management System Dashboard" loading="lazy">
+</div>
+<h3 style="font-size:1.3rem;margin-bottom:0.5rem">Sanjivini Hospital Platform</h3>
+<p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">Modern hospital management platform with appointment scheduling, patient dashboards, and staff management.</p>
+<div class="project-tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span><span class="tag">Dashboard</span></div>
+<div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
+</div>
+<div class="project-card card reveal">
+<div class="project-img">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop" alt="Business Analytics Dashboard" loading="lazy">
+</div>
+<h3 style="font-size:1.3rem;margin-bottom:0.5rem">Business Analytics Dashboard</h3>
+<p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">Interactive responsive dashboard with real-time charts, data visualization, and smooth transitions.</p>
+<div class="project-tags"><span class="tag">Analytics</span><span class="tag">Charts.js</span><span class="tag">Responsive</span></div>
+<div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
+</div>
+<div class="project-card card reveal">
+<div class="project-img">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Modern Portfolio Website" loading="lazy">
+</div>
+<h3 style="font-size:1.3rem;margin-bottom:0.5rem">Cyber Portfolio Experience</h3>
+<p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">High-performance developer portfolio with 3D hero animation, custom cursor, and premium design aesthetics.</p>
+<div class="project-tags"><span class="tag">3D UI</span><span class="tag">Animations</span><span class="tag">Responsive</span><span class="tag">Performance</span></div>
+<div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
+</div>
+<div class="project-card card reveal">
+<div class="project-img">
+<img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2070&auto=format&fit=crop" alt="E-commerce Platform" loading="lazy">
+</div>
+<h3 style="font-size:1.3rem;margin-bottom:0.5rem">E-commerce Analytics Platform</h3>
+<p style="color:var(--muted);font-size:0.85rem;margin-bottom:0.8rem">Comprehensive analytics dashboard for online stores with sales tracking and customer insights.</p>
+<div class="project-tags"><span class="tag">E-commerce</span><span class="tag">Data Viz</span><span class="tag">API Integration</span></div>
+<div class="hero-btns" style="margin-top:1rem"><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">🔗 Live Demo</a><a href="#" class="btn-outline" style="padding:0.5rem 1.2rem">📁 GitHub</a></div>
+</div>
+</div>
+</div>
+</section>
 
-// Scroll progress bar
-window.addEventListener('scroll', () => {
-  const scrollTop = window.scrollY;
-  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-  const scrolled = (scrollTop / docHeight) * 100;
-  document.getElementById('scroll-progress').style.width = scrolled + '%';
-  
-  // Show/hide back-to-top button
-  const backToTopBtn = document.getElementById('back-to-top');
-  if (scrollTop > 300) {
-    backToTopBtn.classList.add('visible');
-  } else {
-    backToTopBtn.classList.remove('visible');
-  }
-});
+<section id="testimonials" style="background:rgba(0,0,0,0.15)">
+<div class="container">
+<div class="section-kicker reveal">// FEEDBACK</div>
+<h2 class="section-title reveal">Client <span>Voice</span></h2>
+<div class="testimonial-grid">
+<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">"Professional execution, smooth UI, excellent responsiveness, and impressive attention to detail."</p><div><strong>Rahul Sharma</strong><p style="color:var(--muted);font-size:0.75rem">Startup Founder</p></div></div>
+<div class="card reveal"><p style="color:var(--text);margin-bottom:1rem">"The animations feel premium and performance remained excellent even on mobile devices."</p><div><strong>Anjali Mehta</strong><p style="color:var(--muted);font-size:0.75rem">Creative Director</p></div></div>
+</div>
+</div>
+</section>
 
-// Back to top button
-document.getElementById('back-to-top').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Custom cursor
-const customCursor = document.getElementById('customCursor');
-const customCursorDot = document.getElementById('customCursorDot');
-const interactiveElements = 'a, button, input, textarea, select, [role="button"]';
-
-document.addEventListener('mousemove', (e) => {
-  customCursor.style.left = e.clientX + 'px';
-  customCursor.style.top = e.clientY + 'px';
-  customCursorDot.style.left = e.clientX + 'px';
-  customCursorDot.style.top = e.clientY + 'px';
-});
-
-document.addEventListener('mouseover', (e) => {
-  if (e.target.matches(interactiveElements)) {
-    customCursor.classList.add('active');
-    customCursorDot.classList.add('active');
-  }
-});
-
-document.addEventListener('mouseout', (e) => {
-  if (e.target.matches(interactiveElements)) {
-    customCursor.classList.remove('active');
-    customCursorDot.classList.remove('active');
-  }
-});
-
-// Typewriter effect
-const typewriterText = document.getElementById('typewriter-text');
-const typewriterContent = "const portfolio = { skills: ['React', 'Vue', 'Tailwind'], mission: 'Build amazing UX' }";
-let typeIndex = 0;
-
-function typeWriter() {
-  if (typeIndex < typewriterContent.length) {
-    typewriterText.textContent += typewriterContent.charAt(typeIndex);
-    typeIndex++;
-    setTimeout(typeWriter, 30);
-  }
-}
-
-// Start typewriter when page loads
-window.addEventListener('load', () => {
-  typewriterText.textContent = '';
-  typeIndex = 0;
-  typeWriter();
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
-// Toast notification
-function showToast(message) {
-  const toast = document.querySelector('.toast');
-  if (toast) {
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
-  }
-}
-
-// Navigation active state
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-    const section = document.querySelector(link.getAttribute('href'));
-    if (section && section.offsetTop <= window.scrollY + 100 && section.offsetTop + section.offsetHeight > window.scrollY + 100) {
-      link.classList.add('active');
-    } else {
-      link.classList.remove('active');
-    }
-  });
-});
-</script>
-
+<section id="contact">
+<div class="container">
+<div class="section-kicker reveal">// CONNECT</div>
+<h2 class="section-title reveal">Let's Build <span>Something Great</span></h2>
+<div class="contact-grid">
+<div class="card reveal">
+<div class="contact-card"><i>📧</i><div><h3>Email</h3><a href="mailto:chiragjainsinghai46@gmail.com" style="color:var(--cyan);text-decoration:none">chiragjainsinghai46@gmail.com</a></div></div>
+<div class="contact-card"><i>📞</i><div><h3>Phone</h3><a href="tel:+919516016816" style="color:var(--cyan);text-decoration:none">+91 95160 16816</a></div></div>
+<div class="contact-card"><i>📍</i><div><h3>Location</h3><p style="color:var(--muted)">Ganj Basoda, Madhya Pradesh, India</p></div></div>
+<div class="social-links"><a href="https://github.com/chiragjn46" target="_blank" rel="noopener noreferrer">🐙</a><a href="https://www.linkedin.com/in/chirag-jain-024a0b1a2" target="_blank" rel="noopener noreferrer">🔗</a><a href="https://twitter.com/CHIRAGJAIN70317" target="_blank" rel="noopener noreferrer">𝕏</a></div>
+</div>
+<div class="card reveal">
+<form id="contactForm">
+<input type="text" id="userName" placeholder="Your Name" required style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff">
+<input type="email" id="userEmail" placeholder="Your Email" required style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff">
+<textarea id="userMessage" placeholder="Tell me about your project" rows="4" required style="width:100%;padding:1rem;margin-bottom:1rem;border-radius:14px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:#fff"></textarea>
+<button type="submit" class="btn-primary" style="width:100%;justify-content:center">Send Message →</button>
+</form>
+</div>
+</div>
+</div>
+</section>
 </main>
 
+<footer>
+<div class="container footer-inner">
+<button class="logo" style="background:none;border:none;font-size:1rem">cj<span>.</span>dev</button>
+<p style="color:var(--muted);font-size:0.75rem">© 2026 Chirag Jain — Frontend Developer</p>
+<div class="social-links"><a href="https://github.com/chiragjn46" target="_blank" rel="noopener noreferrer">🐙</a><a href="https://www.linkedin.com/in/chirag-jain-024a0b1a2" target="_blank" rel="noopener noreferrer">🔗</a><a href="https://twitter.com/CHIRAGJAIN70317" target="_blank" rel="noopener noreferrer">𝕏</a></div>
+</div>
+</footer>
+
+<script>
+(function(){
+// Typewriter effect
+const skillsList = [
+    "HTML5, CSS3, JavaScript ES6+",
+    "React.js • Vue.js • Tailwind CSS",
+    "Responsive Design • Animations",
+    "WordPress • SEO Optimization",
+    "Performance • Core Web Vitals",
+    "UI/UX • Accessibility (WCAG)"
+];
+let skillIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+const typewriterElement = document.getElementById('typewriter-text');
+
+function typeEffect() {
+    if (!typewriterElement) return;
+    const currentSkill = skillsList[skillIndex];
+    if (isDeleting) {
+        typewriterElement.textContent = currentSkill.substring(0, charIndex - 1);
+        charIndex--;
+    } else {
+        typewriterElement.textContent = currentSkill.substring(0, charIndex + 1);
+        charIndex++;
+    }
+    
+    if (!isDeleting && charIndex === currentSkill.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 2500);
+        return;
+    }
+    if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        skillIndex = (skillIndex + 1) % skillsList.length;
+        setTimeout(typeEffect, 500);
+        return;
+    }
+    const speed = isDeleting ? 50 : 100;
+    setTimeout(typeEffect, speed);
+}
+if(typewriterElement) setTimeout(typeEffect, 500);
+
+// Custom cursor
+const cur=document.getElementById('customCursor'),curDot=document.getElementById('customCursorDot');
+if(cur&&curDot&&window.innerWidth>960){
+let mx=0,my=0,cx=0,cy=0,dx=0,dy=0;
+document.addEventListener('mousemove',(e)=>{mx=e.clientX;my=e.clientY;});
+function anim(){cx+=(mx-cx)*0.2;cy+=(my-cy)*0.2;dx+=(mx-dx)*0.3;dy+=(my-dy)*0.3;cur.style.transform=`translate(${cx}px,${cy}px)`;curDot.style.transform=`translate(${dx}px,${dy}px)`;requestAnimationFrame(anim);}
+anim();
+document.querySelectorAll('a,button,.btn-primary,.btn-outline,.card').forEach(el=>{
+el.addEventListener('mouseenter',()=>{cur.classList.add('active');curDot.classList.add('active');});
+el.addEventListener('mouseleave',()=>{cur.classList.remove('active');curDot.classList.remove('active');});
+});
+}
+
+// Scroll progress & back to top
+const progress=document.getElementById('scroll-progress');
+const backBtn=document.getElementById('back-to-top');
+window.addEventListener('scroll',()=>{
+const winScroll=document.documentElement.scrollTop;
+const height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+const scrolled=(winScroll/height)*100;
+if(progress)progress.style.width=scrolled+'%';
+if(backBtn)backBtn.classList.toggle('visible',winScroll>400);
+});
+if(backBtn)backBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(link=>{
+link.addEventListener('click',(e)=>{
+const href=link.getAttribute('href');
+if(href&&href!=='#'){
+const target=document.querySelector(href);
+if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
+}
+});
+});
+
+// Reveal on scroll
+const reveals=document.querySelectorAll('.reveal');
+const obs=new IntersectionObserver(entries=>{
+entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+reveals.forEach(r=>obs.observe(r));
+
+// 3D Hero Background with Perspective Scroll - Stays until 80% scroll, TEXT STAYS VISIBLE
+const heroBg=document.getElementById('heroBg');
+const laptop=document.getElementById('laptop3d');
+const heroLaptop=document.querySelector('.hero-laptop');
+const heroContentLeft=document.querySelector('.hero-content-left');
+
+if(window.innerWidth>768){
+let targetRX=8,targetRY=-16;
+let currentRX=8,currentRY=-16;
+
+window.addEventListener('scroll',()=>{
+const scrollY=window.scrollY;
+const heroSection=document.querySelector('.hero');
+const heroHeight=heroSection.offsetHeight;
+const nextSection=document.querySelector('#about');
+const nextSectionTop=nextSection.offsetTop;
+
+// Calculate progress: 0 when at hero start, 1 when 80% scrolled
+const scrollUntilAbout=nextSectionTop-window.innerHeight;
+const scrollProgress=Math.min(1,Math.max(0,scrollY/scrollUntilAbout));
+
+// Hero Background stays and gets 3D effect
+if(heroBg){
+  // Background stays in place (fixed effect) and gets parallax depth
+  const bgDepth=scrollProgress*30;
+  heroBg.style.transform=`perspective(1000px) rotateX(${scrollProgress*15}deg) translateZ(${bgDepth}px)`;
+  heroBg.style.opacity=1-(scrollProgress*0.3);
+}
+
+// Left content (text) moves down but STAYS VISIBLE until 80%
+if(heroContentLeft){
+  const contentTranslate=scrollProgress*100;
+  const contentOpacity=1; // TEXT STAYS FULLY VISIBLE
+  heroContentLeft.style.transform=`translateY(${contentTranslate}px) translateZ(${scrollProgress*20}px)`;
+  heroContentLeft.style.opacity=contentOpacity;
+}
+
+// Laptop rotates and moves
+if(laptop){
+  targetRX=8+(scrollProgress*20);
+  targetRY=-16+(scrollProgress*25);
+}
+
+if(heroLaptop){
+  const laptopScale=1-(scrollProgress*0.2);
+  const laptopTranslate=scrollProgress*120;
+  const laptopOpacity=1-(scrollProgress*0.5);
+  heroLaptop.style.transform=`translateY(${laptopTranslate}px) scale(${laptopScale}) translateZ(${scrollProgress*15}px)`;
+  heroLaptop.style.opacity=laptopOpacity;
+}
+});
+
+function animateLaptop(){
+  currentRX+=(targetRX-currentRX)*0.08;
+  currentRY+=(targetRY-currentRY)*0.08;
+  laptop.style.transform=`rotateX(${currentRX}deg) rotateY(${currentRY}deg)`;
+  requestAnimationFrame(animateLaptop);
+}
+animateLaptop();
+}
+
+// Form submit
+const form=document.getElementById('contactForm');
+if(form){
+form.addEventListener('submit',async(e)=>{
+e.preventDefault();
+const btn=form.querySelector('button');
+const orig=btn.innerHTML;
+const name=document.getElementById('userName').value.trim();
+const email=document.getElementById('userEmail').value.trim();
+const msg=document.getElementById('userMessage').value.trim();
+if(!name||!email||!msg){
+showToast('❌ Please fill all fields',true);
+return;
+}
+btn.innerHTML='⏳ Sending...';
+btn.disabled=true;
+
+const formData = new FormData();
+formData.append('name', name);
+formData.append('email', email);
+formData.append('message', msg);
+formData.append('_subject', `Portfolio Contact from ${name}`);
+formData.append('_captcha', 'false');
+formData.append('_template', 'table');
+
+try {
+const response = await fetch('https://formsubmit.co/ajax/chiragjainsinghai46@gmail.com', {
+method: 'POST',
+body: formData
+});
+if(response.ok){
+showToast('✅ Message sent! I will reply soon.');
+form.reset();
+btn.innerHTML='✓ Sent!';
+setTimeout(()=>{
+btn.innerHTML=orig;
+btn.disabled=false;
+},2500);
+} else {
+throw new Error('Server error');
+}
+} catch(error) {
+showToast('⚠️ Could not send. Please email me directly: chiragjainsinghai46@gmail.com', true);
+btn.innerHTML=orig;
+btn.disabled=false;
+}
+});
+}
+
+function showToast(msg,isErr=false){
+const existing=document.querySelector('.toast');
+if(existing)existing.remove();
+const toast=document.createElement('div');
+toast.className='toast';
+toast.textContent=msg;
+if(isErr)toast.style.background='linear-gradient(135deg,#ff4757,#c0392b)';
+document.body.appendChild(toast);
+setTimeout(()=>toast.classList.add('show'),10);
+setTimeout(()=>{toast.classList.remove('show');setTimeout(()=>toast.remove(),300);},3500);
+}
+
+// Active nav highlight
+const sections=document.querySelectorAll('section[id]');
+const navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',()=>{
+let current='';
+const scrollY=window.scrollY;
+sections.forEach(s=>{const sectionTop=s.offsetTop-150;if(scrollY>=sectionTop)current=s.getAttribute('id');});
+navLinks.forEach(link=>{link.classList.remove('active');if(link.getAttribute('href')===`#${current}`)link.classList.add('active');});
+});
+})();
+</script>
 </body>
 </html>
+

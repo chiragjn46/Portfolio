@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Chirag Jain</title>
+<meta name="description" content="Privacy Policy for Chirag Jain's portfolio website. Learn how we collect, use, and protect your information.">
+<meta name="author" content="Chirag Jain">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://chiragjn.netlify.app/privacy-policy.html">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23050810'/%3E%3Ctext x='5' y='24' font-family='monospace' font-size='18' font-weight='900' fill='%2300e5ff'%3Ecj%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#050810;
+  --card:rgba(255,255,255,0.03);
+  --border:rgba(255,255,255,0.07);
+  --cyan:#00e5ff;
+  --violet:#8b5cf6;
+  --text:#edf2ff;
+  --muted:#8a97b8;
+  --font-head:'Syne',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:radial-gradient(ellipse at 20% 10%,#0d1226,#050810 60%);
+  color:var(--text);
+  line-height:1.7;
+  min-height:100vh;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;width:100%;z-index:100;
+  background:rgba(5,8,16,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+  padding:0 2rem;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{
+  font-family:var(--font-head);font-size:1.2rem;font-weight:800;
+  color:var(--text);text-decoration:none;
+}
+.nav-logo span{color:var(--cyan)}
+.nav-back{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.8rem;font-weight:500;color:var(--muted);
+  text-decoration:none;letter-spacing:1px;text-transform:uppercase;
+  transition:color 0.2s;
+}
+.nav-back:hover{color:var(--cyan)}
+.nav-back svg{width:16px;height:16px}
+
+/* HERO */
+.hero{
+  padding:140px 0 60px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-100px;left:50%;transform:translateX(-50%);
+  width:600px;height:400px;
+  background:radial-gradient(ellipse,rgba(0,229,255,0.07) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-kicker{
+  font-family:var(--font-mono);font-size:0.7rem;
+  color:var(--cyan);letter-spacing:3px;text-transform:uppercase;
+  margin-bottom:1rem;display:block;
+}
+.hero h1{
+  font-family:var(--font-head);
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  font-weight:800;line-height:1.1;
+  margin-bottom:1rem;
+}
+.hero h1 span{
+  background:linear-gradient(135deg,var(--cyan),var(--violet));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero-sub{
+  color:var(--muted);font-size:0.9rem;
+  max-width:500px;margin:0 auto;
+}
+.last-updated{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  font-family:var(--font-mono);font-size:0.7rem;
+  color:var(--cyan);background:rgba(0,229,255,0.08);
+  border:1px solid rgba(0,229,255,0.2);
+  padding:0.35rem 1rem;border-radius:40px;margin-top:1.5rem;
+}
+
+/* MAIN CONTENT */
+.container{
+  width:min(820px,calc(100% - 3rem));
+  margin:0 auto;
+  padding:3rem 0 6rem;
+}
+
+/* TABLE OF CONTENTS */
+.toc{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:1.8rem 2rem;
+  margin-bottom:3rem;
+}
+.toc h2{
+  font-family:var(--font-mono);font-size:0.72rem;
+  color:var(--cyan);letter-spacing:2px;text-transform:uppercase;
+  margin-bottom:1rem;
+}
+.toc ol{
+  list-style:none;
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:0.4rem;
+  counter-reset:toc;
+}
+.toc ol li{counter-increment:toc}
+.toc ol li a{
+  display:flex;align-items:center;gap:0.5rem;
+  color:var(--muted);text-decoration:none;font-size:0.85rem;
+  transition:color 0.2s;padding:0.2rem 0;
+}
+.toc ol li a::before{
+  content:counter(toc,decimal-leading-zero);
+  font-family:var(--font-mono);font-size:0.65rem;
+  color:var(--cyan);opacity:0.6;min-width:22px;
+}
+.toc ol li a:hover{color:var(--cyan)}
+
+/* SECTIONS */
+.policy-section{
+  margin-bottom:2.5rem;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:2rem 2.2rem;
+  transition:border-color 0.3s;
+}
+.policy-section:hover{border-color:rgba(0,229,255,0.18)}
+
+.section-header{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1.2rem;
+  padding-bottom:1rem;
+  border-bottom:1px solid var(--border);
+}
+.section-num{
+  font-family:var(--font-mono);font-size:0.65rem;
+  color:var(--cyan);background:rgba(0,229,255,0.08);
+  border:1px solid rgba(0,229,255,0.2);
+  padding:0.25rem 0.6rem;border-radius:6px;
+  white-space:nowrap;
+}
+.policy-section h2{
+  font-family:var(--font-head);font-size:1.25rem;font-weight:700;
+  color:var(--text);
+}
+.policy-section p{
+  color:var(--muted);font-size:0.9rem;margin-bottom:0.9rem;line-height:1.8;
+}
+.policy-section p:last-child{margin-bottom:0}
+.policy-section ul,.policy-section ol{
+  color:var(--muted);font-size:0.9rem;
+  padding-left:1.4rem;margin-bottom:0.9rem;
+}
+.policy-section ul li,.policy-section ol li{
+  margin-bottom:0.5rem;line-height:1.8;
+}
+.policy-section a{
+  color:var(--cyan);text-decoration:none;border-bottom:1px solid rgba(0,229,255,0.3);
+  transition:border-color 0.2s;
+}
+.policy-section a:hover{border-color:var(--cyan)}
+
+/* HIGHLIGHT BOXES */
+.info-box{
+  background:rgba(0,229,255,0.05);
+  border:1px solid rgba(0,229,255,0.2);
+  border-radius:12px;
+  padding:1rem 1.2rem;
+  margin:1rem 0;
+  font-size:0.85rem;color:var(--text);
+  display:flex;gap:0.75rem;align-items:flex-start;
+}
+.info-box .icon{font-size:1.1rem;margin-top:1px;flex-shrink:0}
+
+/* CONTACT CARD */
+.contact-card{
+  background:linear-gradient(135deg,rgba(0,229,255,0.06),rgba(139,92,246,0.06));
+  border:1px solid rgba(0,229,255,0.2);
+  border-radius:20px;padding:2rem 2.2rem;
+  margin-top:3rem;text-align:center;
+}
+.contact-card h3{
+  font-family:var(--font-head);font-size:1.4rem;font-weight:700;margin-bottom:0.5rem;
+}
+.contact-card p{color:var(--muted);font-size:0.9rem;margin-bottom:1.2rem}
+.contact-card a.email-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:linear-gradient(135deg,var(--cyan),var(--violet));
+  color:#000;font-weight:700;font-size:0.85rem;
+  padding:0.8rem 1.8rem;border-radius:40px;text-decoration:none;
+  transition:transform 0.2s,box-shadow 0.2s;border:none;
+}
+.contact-card a.email-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,229,255,0.3);
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);
+  padding:2rem;text-align:center;
+  color:var(--muted);font-size:0.78rem;
+}
+footer a{color:var(--cyan);text-decoration:none}
+
+@media(max-width:600px){
+  .container{width:calc(100% - 2rem);padding:2rem 0 4rem}
+  .policy-section{padding:1.4rem 1.2rem}
+  .toc{padding:1.2rem}
+  .toc ol{grid-template-columns:1fr}
+  nav{padding:0 1rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">cj<span>.</span>dev</a>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Portfolio
+  </a>
+</nav>
+
+<div class="hero">
+  <span class="hero-kicker">// Legal Document</span>
+  <h1>Privacy <span>Policy</span></h1>
+  <p class="hero-sub">How I collect, use, and protect your information on this website.</p>
+  <div class="last-updated">🕐 Last Updated: May 23, 2026</div>
+</div>
+
+<div class="container">
+
+  <!-- TABLE OF CONTENTS -->
+  <div class="toc">
+    <h2>// Contents</h2>
+    <ol>
+      <li><a href="#information">Information I Collect</a></li>
+      <li><a href="#usage">How I Use Your Information</a></li>
+      <li><a href="#cookies">Cookies & Tracking</a></li>
+      <li><a href="#adsense">Google AdSense</a></li>
+      <li><a href="#third-party">Third-Party Links</a></li>
+      <li><a href="#data-sharing">Data Sharing</a></li>
+      <li><a href="#security">Data Security</a></li>
+      <li><a href="#rights">Your Rights</a></li>
+      <li><a href="#children">Children's Privacy</a></li>
+      <li><a href="#changes">Changes to This Policy</a></li>
+      <li><a href="#contact">Contact Me</a></li>
+    </ol>
+  </div>
+
+  <div class="info-box">
+    <span class="icon">📋</span>
+    <span>This Privacy Policy applies to the website <strong>chiragjn.netlify.app</strong> operated by <strong>Chirag Jain</strong>, a frontend developer based in Ganj Basoda, Madhya Pradesh, India. By using this website, you agree to the collection and use of information as described in this policy.</span>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="policy-section" id="information">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Information I Collect</h2>
+    </div>
+    <p>I collect two types of information when you visit this website:</p>
+    <p><strong style="color:var(--text)">Information You Provide Directly:</strong> When you use the contact form on this website, you voluntarily provide:</p>
+    <ul>
+      <li>Your full name</li>
+      <li>Your email address</li>
+      <li>Your message or project details</li>
+    </ul>
+    <p><strong style="color:var(--text)">Information Collected Automatically:</strong> When you visit this website, certain information is collected automatically through cookies and analytics tools, including:</p>
+    <ul>
+      <li>IP address and approximate geographic location</li>
+      <li>Browser type and version</li>
+      <li>Device type (mobile, tablet, desktop)</li>
+      <li>Pages visited and time spent on each page</li>
+      <li>Referring website (where you came from)</li>
+      <li>Operating system information</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="policy-section" id="usage">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>How I Use Your Information</h2>
+    </div>
+    <p>The information I collect is used solely for the following purposes:</p>
+    <ul>
+      <li>To respond to your messages and enquiries sent through the contact form</li>
+      <li>To discuss potential freelance or collaboration opportunities</li>
+      <li>To improve the website's content, design, and user experience</li>
+      <li>To understand how visitors find and use this website</li>
+      <li>To display relevant advertisements through Google AdSense</li>
+      <li>To ensure the website is functioning correctly and securely</li>
+    </ul>
+    <div class="info-box">
+      <span class="icon">✅</span>
+      <span>I will <strong>never</strong> sell, rent, or trade your personal information to any third party for marketing purposes. Your contact details are used only to reply to you.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="policy-section" id="cookies">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>Cookies & Tracking Technologies</h2>
+    </div>
+    <p>This website uses cookies — small text files stored in your browser — to improve your experience and enable certain features. The cookies used on this site include:</p>
+    <ul>
+      <li><strong style="color:var(--text)">Essential Cookies:</strong> Required for basic website functionality</li>
+      <li><strong style="color:var(--text)">Analytics Cookies:</strong> Used to understand how visitors interact with the website (via Google Analytics)</li>
+      <li><strong style="color:var(--text)">Advertising Cookies:</strong> Used by Google AdSense to show relevant ads based on your interests and browsing history</li>
+      <li><strong style="color:var(--text)">Preference Cookies:</strong> Used to remember your settings and preferences</li>
+    </ul>
+    <p>You can control or disable cookies through your browser settings. Please note that disabling cookies may affect some features of this website. Most browsers allow you to refuse cookies or delete existing ones through their settings menu.</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="policy-section" id="adsense">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Google AdSense & Advertising</h2>
+    </div>
+    <p>This website uses <strong style="color:var(--text)">Google AdSense</strong>, an advertising service provided by Google LLC, to display advertisements. Google AdSense uses cookies to serve ads based on your prior visits to this website and other websites across the internet.</p>
+    <p>Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the internet. You may opt out of personalised advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads Settings</a>.</p>
+    <p>The Google AdSense publisher ID used on this website is: <strong style="color:var(--cyan);font-family:var(--font-mono)">ca-pub-9019452037381404</strong></p>
+    <div class="info-box">
+      <span class="icon">ℹ️</span>
+      <span>Google AdSense may use the DoubleClick cookie to serve ads. You can learn more about how Google uses data from sites that use its services by visiting: <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google's Privacy & Terms</a>.</span>
+    </div>
+    <p>Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites. Users may opt out of third-party vendor use of cookies for personalised advertising by visiting <a href="http://www.aboutads.info/choices/" target="_blank" rel="noopener">www.aboutads.info/choices</a>.</p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="policy-section" id="third-party">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Third-Party Links</h2>
+    </div>
+    <p>This website contains links to external websites and services, including but not limited to:</p>
+    <ul>
+      <li>GitHub (<a href="https://github.com/chiragjn46" target="_blank" rel="noopener">github.com/chiragjn46</a>)</li>
+      <li>LinkedIn (<a href="https://www.linkedin.com/in/chirag-jain-024a0b1a2" target="_blank" rel="noopener">linkedin.com</a>)</li>
+      <li>Twitter / X (<a href="https://twitter.com/CHIRAGJAIN70317" target="_blank" rel="noopener">twitter.com</a>)</li>
+      <li>Telegram (<a href="https://t.me/+Ze3xx0cNlhMwM2Fl" target="_blank" rel="noopener">t.me</a>)</li>
+      <li>Pinterest (<a href="https://pin.it/WQ7RdmDvh" target="_blank" rel="noopener">pinterest.com</a>)</li>
+      <li>Amazon affiliate links (<a href="https://amzn.to/4nEhl10" target="_blank" rel="noopener noreferrer sponsored">amazon.in</a>)</li>
+    </ul>
+    <p>Please note that once you click on these links and leave this website, I have no control over the privacy practices or content of those external sites. I encourage you to review the privacy policies of any third-party sites you visit.</p>
+    <div class="info-box">
+      <span class="icon">🛒</span>
+      <span><strong>Amazon Affiliate Disclosure:</strong> This website participates in the Amazon Associates Programme. As an Amazon Associate, I earn a small commission from qualifying purchases made through Amazon affiliate links on this site, at no extra cost to you.</span>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <div class="policy-section" id="data-sharing">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Data Sharing & Disclosure</h2>
+    </div>
+    <p>I do not sell, trade, or rent your personal information to third parties. I may share your information only in the following limited circumstances:</p>
+    <ul>
+      <li><strong style="color:var(--text)">Service Providers:</strong> With trusted third-party services that help operate this website, such as FormSubmit (contact form processing) and Netlify (website hosting). These providers are bound to handle your data securely.</li>
+      <li><strong style="color:var(--text)">Legal Requirements:</strong> If required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
+      <li><strong style="color:var(--text)">Protection of Rights:</strong> To protect and defend the rights or property of this website, or to prevent or investigate possible wrongdoing.</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 7 -->
+  <div class="policy-section" id="security">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Data Security</h2>
+    </div>
+    <p>I take the security of your personal information seriously. This website is hosted on <strong style="color:var(--text)">Netlify</strong>, which provides HTTPS encryption (SSL/TLS) for all connections, ensuring that any data transmitted between your browser and this website is encrypted and secure.</p>
+    <p>Contact form submissions are processed through <strong style="color:var(--text)">FormSubmit.co</strong>, which uses secure transmission protocols to forward your message to my email inbox.</p>
+    <p>However, please be aware that no method of transmission over the internet or method of electronic storage is 100% secure. While I strive to use commercially acceptable means to protect your personal information, I cannot guarantee its absolute security.</p>
+  </div>
+
+  <!-- SECTION 8 -->
+  <div class="policy-section" id="rights">
+    <div class="section-header">
+      <span class="section-num">08</span>
+      <h2>Your Rights</h2>
+    </div>
+    <p>Depending on your location, you may have the following rights regarding your personal data:</p>
+    <ul>
+      <li><strong style="color:var(--text)">Right to Access:</strong> You can request a copy of the personal information I hold about you</li>
+      <li><strong style="color:var(--text)">Right to Correction:</strong> You can request that I correct any inaccurate or incomplete information</li>
+      <li><strong style="color:var(--text)">Right to Deletion:</strong> You can request that I delete your personal information</li>
+      <li><strong style="color:var(--text)">Right to Object:</strong> You can object to the processing of your personal information</li>
+      <li><strong style="color:var(--text)">Right to Opt-Out of Ads:</strong> You can opt out of personalised ads via Google Ads Settings</li>
+    </ul>
+    <p>To exercise any of these rights, please contact me at <a href="mailto:chiragjainsinghai46@gmail.com">chiragjainsinghai46@gmail.com</a>. I will respond to your request within 30 days.</p>
+  </div>
+
+  <!-- SECTION 9 -->
+  <div class="policy-section" id="children">
+    <div class="section-header">
+      <span class="section-num">09</span>
+      <h2>Children's Privacy</h2>
+    </div>
+    <p>This website is not directed at children under the age of 13. I do not knowingly collect personally identifiable information from children under 13 years of age.</p>
+    <p>If you are a parent or guardian and you believe your child has provided personal information to this website, please contact me immediately at <a href="mailto:chiragjainsinghai46@gmail.com">chiragjainsinghai46@gmail.com</a> and I will take steps to remove that information from my records.</p>
+  </div>
+
+  <!-- SECTION 10 -->
+  <div class="policy-section" id="changes">
+    <div class="section-header">
+      <span class="section-num">10</span>
+      <h2>Changes to This Privacy Policy</h2>
+    </div>
+    <p>I may update this Privacy Policy from time to time to reflect changes in my practices, technologies, or legal requirements. When I make changes, I will update the "Last Updated" date at the top of this page.</p>
+    <p>I encourage you to review this Privacy Policy periodically to stay informed about how I am protecting your information. Your continued use of this website after any changes to this policy constitutes your acceptance of the updated terms.</p>
+  </div>
+
+  <!-- SECTION 11 — CONTACT -->
+  <div class="policy-section" id="contact">
+    <div class="section-header">
+      <span class="section-num">11</span>
+      <h2>Contact Me</h2>
+    </div>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or the handling of your personal information, please do not hesitate to reach out:</p>
+    <ul>
+      <li><strong style="color:var(--text)">Name:</strong> Chirag Jain</li>
+      <li><strong style="color:var(--text)">Email:</strong> <a href="mailto:chiragjainsinghai46@gmail.com">chiragjainsinghai46@gmail.com</a></li>
+      <li><strong style="color:var(--text)">Phone:</strong> <a href="tel:+919516016816">+91 95160 16816</a></li>
+      <li><strong style="color:var(--text)">Location:</strong> Ganj Basoda, Madhya Pradesh, India</li>
+      <li><strong style="color:var(--text)">Website:</strong> <a href="https://chiragjn.netlify.app">chiragjn.netlify.app</a></li>
+    </ul>
+  </div>
+
+  <!-- CONTACT CTA -->
+  <div class="contact-card">
+    <h3>Have a Question?</h3>
+    <p>If anything in this policy is unclear, I'm happy to explain it.</p>
+    <a href="mailto:chiragjainsinghai46@gmail.com" class="email-btn">
+      📧 chiragjainsinghai46@gmail.com
+    </a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 Chirag Jain — Frontend Developer &nbsp;|&nbsp; <a href="index.html">Back to Portfolio</a> &nbsp;|&nbsp; Ganj Basoda, Madhya Pradesh, India</p>
+</footer>
+
+</body>
+</html>
